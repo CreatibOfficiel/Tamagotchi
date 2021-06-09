@@ -114,7 +114,7 @@ public class Pnl2_Mdl extends Observable {
         if(value < 0){
             m_phrase = nameTama + " a achteté la crypto-monnaie " + randomCrypto.getName() + ", c'était un mauvais coup vous avez perdu de l'argent MR." + namePlayer;
         } else {
-            m_phrase = nameTama + "Votre joueur a achteté la crypto-monnaie " + randomCrypto.getName() + ", c'était un bon coup vous avez gagné de l'argent MR." + namePlayer;
+            m_phrase = nameTama + " a achteté la crypto-monnaie " + randomCrypto.getName() + ", c'était un bon coup vous avez gagné de l'argent MR." + namePlayer;
         }
 
         nouvelEtat();
