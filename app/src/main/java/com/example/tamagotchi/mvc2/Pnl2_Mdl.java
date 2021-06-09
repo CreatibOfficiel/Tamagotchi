@@ -4,12 +4,14 @@ import android.os.Debug;
 import android.os.Handler;
 import android.util.Log;
 
+import com.example.tamagotchi.PanelManager;
 import com.example.tamagotchi.etats.Etat;
 import com.example.tamagotchi.etats.EtatFatigueNotStonks;
 import com.example.tamagotchi.etats.EtatFatigueStonks;
 import com.example.tamagotchi.etats.EtatHeureuxNotStonks;
 import com.example.tamagotchi.etats.EtatHeureuxStonks;
 import com.example.tamagotchi.etats.EtatSleepRough;
+import com.example.tamagotchi.mvc3.Pnl3_Mdl;
 import com.example.tamagotchi.tools.CryptoList;
 
 import java.util.Arrays;
@@ -75,7 +77,7 @@ public class Pnl2_Mdl extends Observable {
     }
 
     public void work(){
-        if(m_etat.getEtatImage() != 2131165315){
+        if(m_etat.getName().equals("EtatSleepRough")){
             m_cash += 2;
             m_energy -= 2;
             if(m_energy < 0){
@@ -84,22 +86,28 @@ public class Pnl2_Mdl extends Observable {
             if(m_cash > 100){
                 m_cash = 100;
             }
+            m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " a travaillé sous vos ordres MR." + Pnl3_Mdl.getM_nameOfUser();
             nouvelEtat();
+        }else{
+            m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " est mort... Vous avez tout perdu MR." + Pnl3_Mdl.getM_nameOfUser();
         }
     }
 
     public void sleep(){
-        if(m_etat.getName() != "EtatSleepRough"){
+        if(m_etat.getName().equals("EtatSleepRough")){
             m_energy += 5;
             if(m_energy > 100){
                 m_energy = 100;
             }
+            m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " s'est endormi.e pour récupérer, MR." + Pnl3_Mdl.getM_nameOfUser();
             nouvelEtat();
+        }else{
+            m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " est mort... Vous avez tout perdu MR." + Pnl3_Mdl.getM_nameOfUser();
         }
     }
 
     public void giveCrypto(int value){
-        if(m_etat.getName() != "EtatSleepRough"){
+        if(m_etat.getName().equals("EtatSleepRough")){
             m_cash += value;
             m_energy -= 5;
             if(m_energy < 0){
@@ -114,8 +122,8 @@ public class Pnl2_Mdl extends Observable {
         }
     }
 
-    public void invest(String namePlayer, String nameTama){
-        if(m_etat.getName() != "EtatSleepRough"){
+    public void invest(){
+        if(m_etat.getName().equals("EtatSleepRough")){
             final List<CryptoList> list = Collections.unmodifiableList(Arrays.asList(CryptoList.values()));
 
             Random random = new Random(); // creating Random object
@@ -123,7 +131,7 @@ public class Pnl2_Mdl extends Observable {
             int value = random.nextInt(15);
             CryptoList randomCrypto = list.get(random.nextInt(list.size()));
 
-            if(random.nextBoolean() == false) { // displaying a random boolean
+            if(random.nextBoolean()) { // displaying a random boolean
                 // down
                 value *= -1;
             }
@@ -131,22 +139,24 @@ public class Pnl2_Mdl extends Observable {
             giveCrypto(value);
 
             if(value < 0){
-                m_phrase = nameTama + " a achteté la crypto-monnaie " + randomCrypto.getName() + ", c'était un mauvais coup vous avez perdu de l'argent MR." + namePlayer;
+                m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " a acheté la crypto-monnaie " + randomCrypto.getName() + ", c'était un mauvais coup vous avez perdu de l'argent MR." + Pnl3_Mdl.getM_nameOfUser();
             } else {
-                m_phrase = nameTama + " a achteté la crypto-monnaie " + randomCrypto.getName() + ", c'était un bon coup vous avez gagné de l'argent MR." + namePlayer;
+                m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " a acheté la crypto-monnaie " + randomCrypto.getName() + ", c'était un bon coup vous avez gagné de l'argent MR." + Pnl3_Mdl.getM_nameOfUser();
             }
 
             nouvelEtat();
         }else{
-            m_phrase = nameTama + " est mort... Vous avez tout perdu MR." + namePlayer;
+            m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " est mort... Vous avez tout perdu MR." + Pnl3_Mdl.getM_nameOfUser();
         }
     }
 
     public void passTime(){
-        if(m_energy > 0)
-            m_energy--;
-        if(m_cash > 0)
-            m_cash--;
+        if(PanelManager.getPnl() == 2) {
+            if (m_energy > 0)
+                m_energy--;
+            if (m_cash > 0)
+                m_cash--;
+        }
         nouvelEtat();
         setChanged();
         notifyObservers();

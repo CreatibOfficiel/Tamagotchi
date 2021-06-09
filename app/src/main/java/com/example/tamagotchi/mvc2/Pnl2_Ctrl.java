@@ -26,9 +26,7 @@ public class Pnl2_Ctrl implements View.OnClickListener {
         }
         else if(v.getId() == R.id.buttonInvest){
             // invest
-            refPanelManager.getTamagotchi().invest(
-                    refPanelManager.getConfig().getM_nameOfUser(),
-                    refPanelManager.getConfig().getM_nameOfTamagotchi());
+            refPanelManager.getTamagotchi().invest();
         }
         else if(v.getId() == R.id.buttonSleep){
             // sleep

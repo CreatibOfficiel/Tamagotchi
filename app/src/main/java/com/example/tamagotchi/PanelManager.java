@@ -16,7 +16,7 @@ public class PanelManager {
 
     private static PanelManager instance = null;
 
-    private int pnl;
+    public static int pnl;
 
     private Pnl1_View view1;
     private Pnl2_View view2;
@@ -90,4 +90,5 @@ public class PanelManager {
         return mdl2;
     }
     public Pnl3_Mdl getConfig() { return mdl3; }
+    public static int getPnl() { return pnl; }
 }
