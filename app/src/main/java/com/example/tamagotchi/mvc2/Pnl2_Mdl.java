@@ -77,6 +77,10 @@ public class Pnl2_Mdl extends Observable {
     public void work(){
         if(m_etat.getEtatImage() != 2131165315){
             m_cash += 2;
+            m_energy -= 2;
+            if(m_energy < 0){
+                m_energy = 0;
+            }
             if(m_cash > 100){
                 m_cash = 100;
             }
@@ -85,7 +89,7 @@ public class Pnl2_Mdl extends Observable {
     }
 
     public void sleep(){
-        if(m_etat.getEtatImage() != 2131165315){
+        if(m_etat.getName() != "EtatSleepRough"){
             m_energy += 5;
             if(m_energy > 100){
                 m_energy = 100;
@@ -95,8 +99,12 @@ public class Pnl2_Mdl extends Observable {
     }
 
     public void giveCrypto(int value){
-        if(m_etat.getEtatImage() != 2131165315){
+        if(m_etat.getName() != "EtatSleepRough"){
             m_cash += value;
+            m_energy -= 5;
+            if(m_energy < 0){
+                m_energy = 0;
+            }
             if(m_cash > 100){
                 m_cash = 100;
             }else if(m_cash < 0){
@@ -107,7 +115,7 @@ public class Pnl2_Mdl extends Observable {
     }
 
     public void invest(String namePlayer, String nameTama){
-        if(m_etat.getEtatImage() != 2131165315){
+        if(m_etat.getName() != "EtatSleepRough"){
             final List<CryptoList> list = Collections.unmodifiableList(Arrays.asList(CryptoList.values()));
 
             Random random = new Random(); // creating Random object

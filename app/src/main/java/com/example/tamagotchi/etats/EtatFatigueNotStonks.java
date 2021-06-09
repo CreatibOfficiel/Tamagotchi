@@ -23,5 +23,10 @@ public class EtatFatigueNotStonks implements Etat{
         }
     }
 
+    @Override
+    public String getName() {
+        return "EtatFatigueNotStonks";
+    }
+
     public int getEtatImage() { return etatImage; }
 }

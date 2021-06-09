@@ -13,4 +13,9 @@ public class EtatSleepRough implements Etat {
     }
 
     public int getEtatImage() { return etatImage; }
+
+    @Override
+    public String getName() {
+        return "EtatSleepRough";
+    }
 }

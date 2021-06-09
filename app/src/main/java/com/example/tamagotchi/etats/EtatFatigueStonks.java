@@ -21,4 +21,9 @@ public class EtatFatigueStonks implements Etat {
     }
 
     public int getEtatImage() { return etatImage; }
+
+    @Override
+    public String getName() {
+        return "EtatFatigueStonks";
+    }
 }
