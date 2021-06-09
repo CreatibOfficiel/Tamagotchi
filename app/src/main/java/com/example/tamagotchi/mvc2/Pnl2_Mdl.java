@@ -139,9 +139,9 @@ public class Pnl2_Mdl extends Observable {
             giveCrypto(value);
 
             if(value < 0){
-                m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " a acheté la crypto-monnaie " + randomCrypto.getName() + ", c'était un mauvais coup, vous avez perdu de l'argent M." + Pnl3_Mdl.getM_nameOfUser() + " Et " + Pnl3_Mdl.getM_nameOfTamagotchi() + " s'est fatigué.e !";
+                m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " a acheté la crypto-monnaie " + randomCrypto.getName() + ", c'était un mauvais coup, vous avez perdu de l'argent M." + Pnl3_Mdl.getM_nameOfUser() + " mais " + Pnl3_Mdl.getM_nameOfTamagotchi() + " s'est fatigué.e !";
             } else {
-                m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " a acheté la crypto-monnaie " + randomCrypto.getName() + ", c'était un bon coup vous avez gagné de l'argent M." + Pnl3_Mdl.getM_nameOfUser() + " Et " + Pnl3_Mdl.getM_nameOfTamagotchi() + " s'est fatigué.e !";
+                m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " a acheté la crypto-monnaie " + randomCrypto.getName() + ", c'était un bon coup vous avez gagné de l'argent M." + Pnl3_Mdl.getM_nameOfUser() + " et en plus " + Pnl3_Mdl.getM_nameOfTamagotchi() + " s'est fatigué.e !";
             }
 
             nouvelEtat();
