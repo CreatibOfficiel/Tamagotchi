@@ -23,7 +23,7 @@ public class Pnl3_Mdl extends Observable {
     public static String getM_nameOfUser() {
         return m_nameOfUser;
     }
-
+    // test
     public void setM_nameOfUser(String m_nameOfUser) { this.m_nameOfUser = m_nameOfUser; }
 
     public void update(){
