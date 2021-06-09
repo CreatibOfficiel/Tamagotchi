@@ -77,7 +77,7 @@ public class Pnl2_Mdl extends Observable {
     }
 
     public void work(){
-        if(m_etat.getName().equals("EtatSleepRough")){
+        if(!m_etat.getName().equals("EtatSleepRough")){
             m_cash += 2;
             m_energy -= 2;
             if(m_energy < 0){
@@ -94,7 +94,7 @@ public class Pnl2_Mdl extends Observable {
     }
 
     public void sleep(){
-        if(m_etat.getName().equals("EtatSleepRough")){
+        if(!m_etat.getName().equals("EtatSleepRough")){
             m_energy += 5;
             if(m_energy > 100){
                 m_energy = 100;
@@ -107,7 +107,7 @@ public class Pnl2_Mdl extends Observable {
     }
 
     public void giveCrypto(int value){
-        if(m_etat.getName().equals("EtatSleepRough")){
+        if(!m_etat.getName().equals("EtatSleepRough")){
             m_cash += value;
             m_energy -= 5;
             if(m_energy < 0){
@@ -123,7 +123,7 @@ public class Pnl2_Mdl extends Observable {
     }
 
     public void invest(){
-        if(m_etat.getName().equals("EtatSleepRough")){
+        if(!m_etat.getName().equals("EtatSleepRough")){
             final List<CryptoList> list = Collections.unmodifiableList(Arrays.asList(CryptoList.values()));
 
             Random random = new Random(); // creating Random object
