@@ -14,3 +14,4 @@ public class MainActivity extends AppCompatActivity {
         manager.setPanel(1);
     }
 }
+//Thib le plus grand bg
