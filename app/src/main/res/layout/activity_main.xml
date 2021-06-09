@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Accueil"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ecrantitre" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonGoGameHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jouer"
+            tools:layout_editor_absoluteX="301dp"
+            tools:layout_editor_absoluteY="592dp" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" >
+        </Space>
+
+        <Button
+            android:id="@+id/buttonGoConfigHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Config"
+            tools:layout_editor_absoluteX="26dp"
+            tools:layout_editor_absoluteY="592dp" />
+    </LinearLayout>
+
+</LinearLayout>

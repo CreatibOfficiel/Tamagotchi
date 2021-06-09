@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Un jour tu seras le meilleur trader"
+            tools:layout_editor_absoluteX="107dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <ImageView
+            android:id="@+id/imageGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="143dp"
+            tools:layout_editor_absoluteY="130dp"
+            android:src="@drawable/happystonks" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/argent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Argent"
+            tools:layout_editor_absoluteX="107dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" >
+        </Space>
+
+        <TextView
+            android:id="@+id/energy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Energie"
+            tools:layout_editor_absoluteX="107dp"
+            tools:layout_editor_absoluteY="16dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/messageAction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Message"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="387dp" />
+
+    <LinearLayout android:layout_width="fill_parent"
+        android:id="@+id/linearLayout1"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonWork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Travailler"
+            tools:layout_editor_absoluteX="22dp"
+            tools:layout_editor_absoluteY="445dp" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" >
+        </Space>
+
+        <Button
+            android:id="@+id/buttonInvest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Investir"
+            tools:layout_editor_absoluteX="161dp"
+            tools:layout_editor_absoluteY="445dp" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" >
+        </Space>
+
+        <Button
+            android:id="@+id/buttonSleep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Se reposer"
+            tools:layout_editor_absoluteX="288dp"
+            tools:layout_editor_absoluteY="445dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonGoHomeGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Accueil"
+            tools:layout_editor_absoluteX="301dp"
+            tools:layout_editor_absoluteY="592dp" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" >
+        </Space>
+
+        <Button
+            android:id="@+id/buttonGoConfigGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Config"
+            tools:layout_editor_absoluteX="26dp"
+            tools:layout_editor_absoluteY="592dp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,2 @@
+rootProject.name = "Tamagotchi"
+include ':app'

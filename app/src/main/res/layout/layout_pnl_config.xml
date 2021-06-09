@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Configuration" />
+
+        <ImageView
+            android:id="@+id/imageConfig"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/param" />
+    </LinearLayout>
+
+    <LinearLayout android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+
+        <TextView android:text="Nom du tamagotchi :"
+            android:layout_height="wrap_content"
+            android:layout_width = "wrap_content"/>
+
+        <EditText
+            android:id="@+id/nameTamagotchi"
+            android:hint="RAT est le nom de base"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+    </LinearLayout>
+
+
+    <LinearLayout android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Votre nom :" />
+
+        <EditText
+            android:id="@+id/namePlayer"
+            android:hint="Trader est votre nom de base"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/init"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Init" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonGoHomeConfig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Accueil" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" >
+        </Space>
+
+        <Button
+            android:id="@+id/buttonGoGameConfig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jouer" />
+    </LinearLayout>
+
+</LinearLayout>
