@@ -1,5 +1,7 @@
 package com.example.tamagotchi.mvc3;
 
+import android.util.Log;
+
 import java.util.Observable;
 
 public class Pnl3_Mdl extends Observable {
@@ -16,17 +18,13 @@ public class Pnl3_Mdl extends Observable {
         return m_nameOfTamagotchi;
     }
 
-    public void setM_nameOfTamagotchi(String m_nameOfTamagotchi) {
-        this.m_nameOfTamagotchi = m_nameOfTamagotchi;
-    }
+    public void setM_nameOfTamagotchi(String m_nameOfTamagotchi) { this.m_nameOfTamagotchi = m_nameOfTamagotchi; }
 
     public String getM_nameOfUser() {
         return m_nameOfUser;
     }
 
-    public void setM_nameOfUser(String m_nameOfUser) {
-        this.m_nameOfUser = m_nameOfUser;
-    }
+    public void setM_nameOfUser(String m_nameOfUser) { this.m_nameOfUser = m_nameOfUser; }
 
     public void update(){
         setChanged();

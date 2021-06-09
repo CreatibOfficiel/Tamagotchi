@@ -62,6 +62,5 @@ public class Pnl2_View extends LinearLayout implements Observer {
         imageGame.setImageDrawable(getResources().getDrawable(refMdl.getM_etat().getEtatImage()));
         argent.setText("Argent : " + refMdl.getM_cash());
         energy.setText("Energie : " + refMdl.getM_energy());
-
     }
 }

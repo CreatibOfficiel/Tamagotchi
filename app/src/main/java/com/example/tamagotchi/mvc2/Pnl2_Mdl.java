@@ -1,6 +1,8 @@
 package com.example.tamagotchi.mvc2;
 
+import android.os.Debug;
 import android.os.Handler;
+import android.util.Log;
 
 import com.example.tamagotchi.etats.Etat;
 import com.example.tamagotchi.etats.EtatFatigueNotStonks;
@@ -73,51 +75,63 @@ public class Pnl2_Mdl extends Observable {
     }
 
     public void work(){
-        m_cash += 2;
-        if(m_cash > 100){
-            m_cash = 100;
+        if(m_etat.getEtatImage() != 2131165315){
+            m_cash += 2;
+            if(m_cash > 100){
+                m_cash = 100;
+            }
+            nouvelEtat();
         }
-        nouvelEtat();
     }
 
     public void sleep(){
-        m_energy += 5;
-        if(m_energy < 100){
-            m_energy = 100;
+        if(m_etat.getEtatImage() != 2131165315){
+            m_energy += 5;
+            if(m_energy > 100){
+                m_energy = 100;
+            }
+            nouvelEtat();
         }
-        nouvelEtat();
     }
 
     public void giveCrypto(int value){
-        m_cash += value;
-        if(m_cash > 100){
-            m_cash = 100;
+        if(m_etat.getEtatImage() != 2131165315){
+            m_cash += value;
+            if(m_cash > 100){
+                m_cash = 100;
+            }else if(m_cash < 0){
+                m_cash = 0;
+            }
+            nouvelEtat();
         }
-        nouvelEtat();
     }
 
     public void invest(String namePlayer, String nameTama){
-        final List<CryptoList> list = Collections.unmodifiableList(Arrays.asList(CryptoList.values()));
+        if(m_etat.getEtatImage() != 2131165315){
+            final List<CryptoList> list = Collections.unmodifiableList(Arrays.asList(CryptoList.values()));
 
-        Random random = new Random(); // creating Random object
+            Random random = new Random(); // creating Random object
 
-        int value = random.nextInt(15);
-        CryptoList randomCrypto = list.get(random.nextInt(list.size()));
+            int value = random.nextInt(15);
+            CryptoList randomCrypto = list.get(random.nextInt(list.size()));
 
-        if(random.nextBoolean() == false) { // displaying a random boolean
-            // down
-            value *= -1;
+            if(random.nextBoolean() == false) { // displaying a random boolean
+                // down
+                value *= -1;
+            }
+
+            giveCrypto(value);
+
+            if(value < 0){
+                m_phrase = nameTama + " a achteté la crypto-monnaie " + randomCrypto.getName() + ", c'était un mauvais coup vous avez perdu de l'argent MR." + namePlayer;
+            } else {
+                m_phrase = nameTama + " a achteté la crypto-monnaie " + randomCrypto.getName() + ", c'était un bon coup vous avez gagné de l'argent MR." + namePlayer;
+            }
+
+            nouvelEtat();
+        }else{
+            m_phrase = nameTama + " est mort... Vous avez tout perdu MR." + namePlayer;
         }
-
-        giveCrypto(value);
-
-        if(value < 0){
-            m_phrase = nameTama + " a achteté la crypto-monnaie " + randomCrypto.getName() + ", c'était un mauvais coup vous avez perdu de l'argent MR." + namePlayer;
-        } else {
-            m_phrase = nameTama + " a achteté la crypto-monnaie " + randomCrypto.getName() + ", c'était un bon coup vous avez gagné de l'argent MR." + namePlayer;
-        }
-
-        nouvelEtat();
     }
 
     public void passTime(){

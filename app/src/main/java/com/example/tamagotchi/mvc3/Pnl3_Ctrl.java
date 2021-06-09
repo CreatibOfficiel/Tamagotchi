@@ -33,11 +33,10 @@ public class Pnl3_Ctrl implements View.OnClickListener {
     public TextWatcher textWatcherNameTama = new TextWatcher() {
 
         public void afterTextChanged(Editable s) {
-        }
-
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             refPanelManager.getConfig().setM_nameOfTamagotchi(String.valueOf(s));
         }
+
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
 
         public void onTextChanged(CharSequence s, int start, int before, int count) { }
     };
@@ -45,11 +44,10 @@ public class Pnl3_Ctrl implements View.OnClickListener {
     public TextWatcher textWatcherNamePlayer = new TextWatcher() {
 
         public void afterTextChanged(Editable s) {
-        }
-
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             refPanelManager.getConfig().setM_nameOfUser(String.valueOf(s));
         }
+
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
 
         public void onTextChanged(CharSequence s, int start, int before, int count) { }
     };
