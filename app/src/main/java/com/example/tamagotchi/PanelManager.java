@@ -27,6 +27,8 @@ public class PanelManager {
     private Pnl2_Mdl mdl2;
     private Pnl3_Mdl mdl3;
 
+    private SoundPlay soundPlay;
+
     public Activity refAct;
 
     private PanelManager(Context context){
@@ -43,6 +45,8 @@ public class PanelManager {
         ctrl3= new Pnl3_Ctrl();
         view3= new Pnl3_View(context);
 
+        soundPlay= new SoundPlay(context);
+
         view1.setRefCtrl(ctrl1);
         ctrl1.refPanelManager = this;
 
@@ -57,6 +61,7 @@ public class PanelManager {
         ctrl3.refPanelManager = this;
 
         mdl2.addObserver(view2);
+        mdl2.addObserver(soundPlay);
         mdl3.addObserver(view3);
 
         refAct = (Activity)context;
@@ -91,4 +96,5 @@ public class PanelManager {
     }
     public Pnl3_Mdl getConfig() { return mdl3; }
     public static int getPnl() { return pnl; }
+    public SoundPlay getSoundPlay() { return soundPlay; }
 }

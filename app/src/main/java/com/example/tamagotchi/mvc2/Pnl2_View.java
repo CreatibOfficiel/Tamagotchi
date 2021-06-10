@@ -2,6 +2,7 @@ package com.example.tamagotchi.mvc2;
 
 import android.app.Activity;
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.Button;
@@ -44,7 +45,6 @@ public class Pnl2_View extends LinearLayout implements Observer {
         imageGame = (ImageView)findViewById(R.id.imageGame);
         argent = (TextView)findViewById(R.id.argent);
         energy = (TextView)findViewById(R.id.energy);
-
     }
 
     public void setRefCtrl(Pnl2_Ctrl c) {

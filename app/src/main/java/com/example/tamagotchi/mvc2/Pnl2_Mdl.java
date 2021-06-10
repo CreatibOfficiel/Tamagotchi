@@ -1,10 +1,12 @@
 package com.example.tamagotchi.mvc2;
 
+import android.media.MediaPlayer;
 import android.os.Debug;
 import android.os.Handler;
 import android.util.Log;
 
 import com.example.tamagotchi.PanelManager;
+import com.example.tamagotchi.R;
 import com.example.tamagotchi.etats.Etat;
 import com.example.tamagotchi.etats.EtatFatigueNotStonks;
 import com.example.tamagotchi.etats.EtatFatigueStonks;
@@ -50,6 +52,15 @@ public class Pnl2_Mdl extends Observable {
     void nouvelEtat()
     {
         m_etat.etapeSuivante(this);
+        setChanged();
+        notifyObservers();
+    }
+
+    void nouvelEtat(String arg)
+    {
+        m_etat.etapeSuivante(this);
+        setChanged();
+        notifyObservers(arg);
     }
 
     public void changeEtat(int etatNumber){
@@ -90,6 +101,7 @@ public class Pnl2_Mdl extends Observable {
             nouvelEtat();
         }else{
             m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " est mort... Vous avez tout perdu MR." + Pnl3_Mdl.getM_nameOfUser();
+            nouvelEtat();
         }
     }
 
@@ -103,6 +115,7 @@ public class Pnl2_Mdl extends Observable {
             nouvelEtat();
         }else{
             m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " est mort... Vous avez tout perdu MR." + Pnl3_Mdl.getM_nameOfUser();
+            nouvelEtat();
         }
     }
 
@@ -140,13 +153,14 @@ public class Pnl2_Mdl extends Observable {
 
             if(value < 0){
                 m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " a acheté la crypto-monnaie " + randomCrypto.getName() + ", c'était un mauvais coup vous avez perdu de l'argent MR." + Pnl3_Mdl.getM_nameOfUser();
+                nouvelEtat("fail");
             } else {
                 m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " a acheté la crypto-monnaie " + randomCrypto.getName() + ", c'était un bon coup vous avez gagné de l'argent MR." + Pnl3_Mdl.getM_nameOfUser();
+                nouvelEtat("win");
             }
-
-            nouvelEtat();
         }else{
             m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " est mort... Vous avez tout perdu MR." + Pnl3_Mdl.getM_nameOfUser();
+            nouvelEtat();
         }
     }
 
@@ -158,8 +172,6 @@ public class Pnl2_Mdl extends Observable {
                 m_cash--;
         }
         nouvelEtat();
-        setChanged();
-        notifyObservers();
     }
 
     public int getM_cash() { return m_cash; }

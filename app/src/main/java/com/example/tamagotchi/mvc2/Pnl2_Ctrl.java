@@ -1,5 +1,6 @@
 package com.example.tamagotchi.mvc2;
 
+import android.media.MediaPlayer;
 import android.os.Debug;
 import android.util.Log;
 import android.view.View;

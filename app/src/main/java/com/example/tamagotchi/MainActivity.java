@@ -2,6 +2,7 @@ package com.example.tamagotchi;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
