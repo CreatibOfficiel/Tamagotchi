@@ -8,9 +8,9 @@ import java.util.Observer;
 
 public class SoundPlay implements Observer {
 
-    public final MediaPlayer mpWin;
-    public final MediaPlayer mpFail;
-    private MediaPlayer mpBackground;
+    private final MediaPlayer mpWin;
+    private final MediaPlayer mpFail;
+    private final MediaPlayer mpBackground;
 
     public SoundPlay(Context context) {
         this.mpBackground = MediaPlayer.create(context, R.raw.background);
