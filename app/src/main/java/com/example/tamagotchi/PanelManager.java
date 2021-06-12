@@ -11,6 +11,7 @@ import com.example.tamagotchi.mvc2.Pnl2_View;
 import com.example.tamagotchi.mvc3.Pnl3_Ctrl;
 import com.example.tamagotchi.mvc3.Pnl3_Mdl;
 import com.example.tamagotchi.mvc3.Pnl3_View;
+import com.example.tamagotchi.tools.SoundPlay;
 
 public class PanelManager {
 

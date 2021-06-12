@@ -1,7 +1,10 @@
-package com.example.tamagotchi;
+package com.example.tamagotchi.tools;
 
 import android.content.Context;
 import android.media.MediaPlayer;
+import android.util.Log;
+
+import com.example.tamagotchi.R;
 
 import java.util.Observable;
 import java.util.Observer;
