@@ -93,10 +93,10 @@ public class Pnl2_Mdl extends Observable {
             if(m_cash > 100){
                 m_cash = 100;
             }
-            m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " a travaillé sous vos ordres MR." + Pnl3_Mdl.getM_nameOfUser();
+            m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " a travaillé sous vos ordres M." + Pnl3_Mdl.getM_nameOfUser() + ", iel a donc perdu de l'énergie";
             nouvelEtat();
         }else{
-            m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " est mort... Vous avez tout perdu MR." + Pnl3_Mdl.getM_nameOfUser();
+            m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " est mort.e... Vous avez tout perdu M." + Pnl3_Mdl.getM_nameOfUser() + ", iel a donc perdu de l'énergie";
             setChanged();
             notifyObservers();
         }
@@ -108,10 +108,10 @@ public class Pnl2_Mdl extends Observable {
             if(m_energy > 100){
                 m_energy = 100;
             }
-            m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " s'est endormi.e pour récupérer, MR." + Pnl3_Mdl.getM_nameOfUser();
+            m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " s'est endormi.e pour récupérer, M." + Pnl3_Mdl.getM_nameOfUser();
             nouvelEtat();
         }else{
-            m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " est mort... Vous avez tout perdu MR." + Pnl3_Mdl.getM_nameOfUser();
+            m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " est mort.e... Vous avez tout perdu M." + Pnl3_Mdl.getM_nameOfUser();
             setChanged();
             notifyObservers();
         }
@@ -149,14 +149,14 @@ public class Pnl2_Mdl extends Observable {
             giveCrypto(value);
 
             if(value < 0){
-                m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " a acheté la crypto-monnaie " + randomCrypto.getName() + ", c'était un mauvais coup vous avez perdu de l'argent MR." + Pnl3_Mdl.getM_nameOfUser();
+                m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " a acheté la crypto-monnaie " + randomCrypto.getName() + ", c'était un mauvais coup, vous avez perdu de l'argent M." + Pnl3_Mdl.getM_nameOfUser() + ". De plus, " + Pnl3_Mdl.getM_nameOfTamagotchi() + " s'est fatigué.e.";
                 nouvelEtat("fail");
             } else {
-                m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " a acheté la crypto-monnaie " + randomCrypto.getName() + ", c'était un bon coup vous avez gagné de l'argent MR." + Pnl3_Mdl.getM_nameOfUser();
+                m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " a acheté la crypto-monnaie " + randomCrypto.getName() + ", c'était un bon coup, vous avez gagné de l'argent M." + Pnl3_Mdl.getM_nameOfUser() + ". Mais " + Pnl3_Mdl.getM_nameOfTamagotchi() + " s'est fatigué.e.";
                 nouvelEtat("win");
             }
         }else{
-            m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " est mort... Vous avez tout perdu MR." + Pnl3_Mdl.getM_nameOfUser();
+            m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " est mort.e... Vous avez tout perdu M." + Pnl3_Mdl.getM_nameOfUser();
             setChanged();
             notifyObservers();
         }
