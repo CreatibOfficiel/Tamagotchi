@@ -5,7 +5,7 @@ import android.util.Log;
 import java.util.Observable;
 
 public class Pnl3_Mdl extends Observable {
-    // todo trouver la solution pour avoir accès à cette classe dans le panel2
+
     private static String m_nameOfTamagotchi;
     private static String m_nameOfUser;
 

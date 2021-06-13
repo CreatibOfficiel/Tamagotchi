@@ -44,7 +44,6 @@ public class Pnl3_View extends LinearLayout implements Observer {
         btnGoToHome.setOnClickListener(refCtrl);
         btnGoToGame.setOnClickListener(refCtrl);
 
-        // todo appelé le refresh pour voir direct le changement sur le jeu
         editTextTamaName.addTextChangedListener(c.textWatcherNameTama);
         editTextPlayerName.addTextChangedListener(c.textWatcherNamePlayer);
     }

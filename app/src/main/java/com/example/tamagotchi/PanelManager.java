@@ -97,5 +97,4 @@ public class PanelManager {
     }
     public Pnl3_Mdl getConfig() { return mdl3; }
     public static int getPnl() { return pnl; }
-    public SoundPlay getSoundPlay() { return soundPlay; }
 }

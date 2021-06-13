@@ -26,7 +26,6 @@ public class Pnl3_Ctrl implements View.OnClickListener {
             refPanelManager.getConfig().setM_nameOfUser("Trader");
             refPanelManager.getConfig().setM_nameOfTamagotchi("RAT");
             refPanelManager.getConfig().update();
-            // todo reset les champs de text avec le texte de base
         }
     }
 
