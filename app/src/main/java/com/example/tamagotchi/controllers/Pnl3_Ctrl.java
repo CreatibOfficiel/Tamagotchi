@@ -1,4 +1,4 @@
-package com.example.tamagotchi.mvc3;
+package com.example.tamagotchi.controllers;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -6,7 +6,7 @@ import android.view.View;
 
 import com.example.tamagotchi.PanelManager;
 import com.example.tamagotchi.R;
-import com.example.tamagotchi.mvc2.Pnl2_Mdl;
+import com.example.tamagotchi.modeles.Pnl3_Mdl;
 
 public class Pnl3_Ctrl implements View.OnClickListener {
 

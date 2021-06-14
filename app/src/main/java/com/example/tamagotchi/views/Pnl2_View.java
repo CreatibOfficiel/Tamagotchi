@@ -1,9 +1,7 @@
-package com.example.tamagotchi.mvc2;
+package com.example.tamagotchi.views;
 
 import android.app.Activity;
 import android.content.Context;
-import android.media.MediaPlayer;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -11,7 +9,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.tamagotchi.R;
-import com.example.tamagotchi.etats.Etat;
+import com.example.tamagotchi.controllers.Pnl2_Ctrl;
+import com.example.tamagotchi.modeles.Pnl2_Mdl;
 
 import java.util.Observable;
 import java.util.Observer;

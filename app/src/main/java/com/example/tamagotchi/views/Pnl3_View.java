@@ -1,4 +1,4 @@
-package com.example.tamagotchi.mvc3;
+package com.example.tamagotchi.views;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,8 +8,8 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import com.example.tamagotchi.R;
-import com.example.tamagotchi.mvc2.Pnl2_Ctrl;
-import com.example.tamagotchi.mvc2.Pnl2_Mdl;
+import com.example.tamagotchi.controllers.Pnl3_Ctrl;
+import com.example.tamagotchi.modeles.Pnl3_Mdl;
 
 import java.util.Observable;
 import java.util.Observer;

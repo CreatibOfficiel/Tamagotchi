@@ -1,4 +1,4 @@
-package com.example.tamagotchi.mvc1;
+package com.example.tamagotchi.views;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.example.tamagotchi.R;
+import com.example.tamagotchi.controllers.Pnl1_Ctrl;
 
 import java.util.Observable;
 import java.util.Observer;

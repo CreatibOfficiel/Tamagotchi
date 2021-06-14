@@ -1,4 +1,4 @@
-package com.example.tamagotchi.mvc2;
+package com.example.tamagotchi.modeles;
 
 import android.os.Handler;
 
@@ -9,7 +9,6 @@ import com.example.tamagotchi.etats.EtatFatigueStonks;
 import com.example.tamagotchi.etats.EtatHeureuxNotStonks;
 import com.example.tamagotchi.etats.EtatHeureuxStonks;
 import com.example.tamagotchi.etats.EtatSleepRough;
-import com.example.tamagotchi.mvc3.Pnl3_Mdl;
 import com.example.tamagotchi.tools.CryptoList;
 
 import java.util.Arrays;
@@ -96,7 +95,7 @@ public class Pnl2_Mdl extends Observable {
             m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " a travaillé sous vos ordres M." + Pnl3_Mdl.getM_nameOfUser() + ", iel a donc perdu de l'énergie";
             nouvelEtat();
         }else{
-            m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " est mort.e... Vous avez tout perdu M." + Pnl3_Mdl.getM_nameOfUser() + ", iel a donc perdu de l'énergie";
+            m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " est mort.e... Vous avez tout perdu M." + Pnl3_Mdl.getM_nameOfUser();
             setChanged();
             notifyObservers();
         }

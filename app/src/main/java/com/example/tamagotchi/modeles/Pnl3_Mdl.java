@@ -1,4 +1,4 @@
-package com.example.tamagotchi.mvc3;
+package com.example.tamagotchi.modeles;
 
 import android.util.Log;
 

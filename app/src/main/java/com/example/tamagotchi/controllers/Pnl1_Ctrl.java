@@ -1,4 +1,4 @@
-package com.example.tamagotchi.mvc1;
+package com.example.tamagotchi.controllers;
 
 import android.provider.Settings;
 import android.view.View;

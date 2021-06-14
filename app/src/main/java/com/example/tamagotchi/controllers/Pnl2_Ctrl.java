@@ -1,12 +1,10 @@
-package com.example.tamagotchi.mvc2;
+package com.example.tamagotchi.controllers;
 
-import android.media.MediaPlayer;
-import android.os.Debug;
-import android.util.Log;
 import android.view.View;
 
 import com.example.tamagotchi.PanelManager;
 import com.example.tamagotchi.R;
+import com.example.tamagotchi.modeles.Pnl2_Mdl;
 
 public class Pnl2_Ctrl implements View.OnClickListener {
 

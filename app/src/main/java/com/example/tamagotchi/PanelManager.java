@@ -3,14 +3,14 @@ package com.example.tamagotchi;
 import android.app.Activity;
 import android.content.Context;
 
-import com.example.tamagotchi.mvc1.Pnl1_Ctrl;
-import com.example.tamagotchi.mvc1.Pnl1_View;
-import com.example.tamagotchi.mvc2.Pnl2_Ctrl;
-import com.example.tamagotchi.mvc2.Pnl2_Mdl;
-import com.example.tamagotchi.mvc2.Pnl2_View;
-import com.example.tamagotchi.mvc3.Pnl3_Ctrl;
-import com.example.tamagotchi.mvc3.Pnl3_Mdl;
-import com.example.tamagotchi.mvc3.Pnl3_View;
+import com.example.tamagotchi.controllers.Pnl1_Ctrl;
+import com.example.tamagotchi.views.Pnl1_View;
+import com.example.tamagotchi.controllers.Pnl2_Ctrl;
+import com.example.tamagotchi.modeles.Pnl2_Mdl;
+import com.example.tamagotchi.views.Pnl2_View;
+import com.example.tamagotchi.controllers.Pnl3_Ctrl;
+import com.example.tamagotchi.modeles.Pnl3_Mdl;
+import com.example.tamagotchi.views.Pnl3_View;
 import com.example.tamagotchi.tools.SoundPlay;
 
 public class PanelManager {
