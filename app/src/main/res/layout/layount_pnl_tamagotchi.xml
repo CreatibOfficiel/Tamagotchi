@@ -126,6 +126,20 @@
         </Space>
 
         <Button
+            android:id="@+id/buttonPlayAgain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RE START"
+            tools:layout_editor_absoluteX="26dp"
+            tools:layout_editor_absoluteY="592dp" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" >
+        </Space>
+
+        <Button
             android:id="@+id/buttonGoConfigGame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

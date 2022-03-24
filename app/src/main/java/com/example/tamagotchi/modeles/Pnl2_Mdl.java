@@ -133,29 +133,44 @@ public class Pnl2_Mdl extends Observable {
 
     public void invest(){
         if(!m_etat.getName().equals("EtatSleepRough")){
-            final List<CryptoList> list = Collections.unmodifiableList(Arrays.asList(CryptoList.values()));
+            if(Pnl3_Mdl.getM_cryptoList().size() != 0){
+                final List<String> list = Pnl3_Mdl.getM_cryptoList();
 
-            Random random = new Random(); // creating Random object
+                Random random = new Random(); // creating Random object
 
-            int value = random.nextInt(15);
-            CryptoList randomCrypto = list.get(random.nextInt(list.size()));
+                int value = random.nextInt(15);
+                String randomCrypto = list.get(random.nextInt(list.size()));
 
-            if(random.nextBoolean()) { // displaying a random boolean
-                // down
-                value *= -1;
-            }
+                if(random.nextBoolean()) { // displaying a random boolean
+                    // down
+                    value *= -1;
+                }
 
-            giveCrypto(value);
+                giveCrypto(value);
 
-            if(value < 0){
-                m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " a acheté la crypto-monnaie " + randomCrypto.getName() + ", c'était un mauvais coup, vous avez perdu de l'argent M." + Pnl3_Mdl.getM_nameOfUser() + ". De plus, " + Pnl3_Mdl.getM_nameOfTamagotchi() + " s'est fatigué.e.";
-                nouvelEtat("fail");
-            } else {
-                m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " a acheté la crypto-monnaie " + randomCrypto.getName() + ", c'était un bon coup, vous avez gagné de l'argent M." + Pnl3_Mdl.getM_nameOfUser() + ". Mais " + Pnl3_Mdl.getM_nameOfTamagotchi() + " s'est fatigué.e.";
-                nouvelEtat("win");
+                if(value < 0){
+                    m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " a acheté la crypto-monnaie " + randomCrypto + ", c'était un mauvais coup, vous avez perdu de l'argent M." + Pnl3_Mdl.getM_nameOfUser() + ". De plus, " + Pnl3_Mdl.getM_nameOfTamagotchi() + " s'est fatigué.e.";
+                    nouvelEtat("fail");
+                } else {
+                    m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " a acheté la crypto-monnaie " + randomCrypto + ", c'était un bon coup, vous avez gagné de l'argent M." + Pnl3_Mdl.getM_nameOfUser() + ". Mais " + Pnl3_Mdl.getM_nameOfTamagotchi() + " s'est fatigué.e.";
+                    nouvelEtat("win");
+                }
+            }else{
+                m_phrase = "M." + Pnl3_Mdl.getM_nameOfUser() + " vous devez choisir au moins une crypto dans la liste de la config";
             }
         }else{
             m_phrase = Pnl3_Mdl.getM_nameOfTamagotchi() + " est mort.e... Vous avez tout perdu M." + Pnl3_Mdl.getM_nameOfUser();
+            setChanged();
+            notifyObservers();
+        }
+    }
+
+    public void playAgain(){
+        if(m_etat.getName().equals("EtatSleepRough")){
+            m_cash = 100;
+            m_energy = 100;
+            m_etat = new EtatHeureuxStonks();
+
             setChanged();
             notifyObservers();
         }

@@ -24,6 +24,7 @@ public class Pnl2_View extends LinearLayout implements Observer {
     public Button btnWork;
     public Button btnInvest;
     public Button btnSleep;
+    public Button btnPlayAgain;
     public TextView textAction;
     public TextView argent;
     public TextView energy;
@@ -40,6 +41,7 @@ public class Pnl2_View extends LinearLayout implements Observer {
         btnWork = (Button)findViewById(R.id.buttonWork);
         btnInvest = (Button)findViewById(R.id.buttonInvest);
         btnSleep = (Button)findViewById(R.id.buttonSleep);
+        btnPlayAgain = (Button)findViewById(R.id.buttonPlayAgain);
         textAction = (TextView)findViewById(R.id.messageAction);
         imageGame = (ImageView)findViewById(R.id.imageGame);
         argent = (TextView)findViewById(R.id.argent);
@@ -53,6 +55,7 @@ public class Pnl2_View extends LinearLayout implements Observer {
         btnWork.setOnClickListener(refCtrl);
         btnInvest.setOnClickListener(refCtrl);
         btnSleep.setOnClickListener(refCtrl);
+        btnPlayAgain.setOnClickListener(refCtrl);
     }
 
     @Override
