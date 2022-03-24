@@ -86,4 +86,10 @@
             android:text="Jouer" />
     </LinearLayout>
 
+    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/cryptoList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:choiceMode="multipleChoice"/>
+
 </LinearLayout>

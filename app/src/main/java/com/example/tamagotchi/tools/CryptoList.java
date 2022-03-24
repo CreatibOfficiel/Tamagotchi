@@ -1,5 +1,4 @@
 package com.example.tamagotchi.tools;
-
 public enum CryptoList {
 
     BTC("BTC"),
@@ -31,6 +30,9 @@ public enum CryptoList {
     XMR("XMR");
 
     private String name;
-    CryptoList(String name) {this.name= name;}
+    CryptoList(String name) {
+        this.name= name;
+    }
+
     public String getName() {return name;}
 }

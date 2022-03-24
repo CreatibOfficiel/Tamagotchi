@@ -2,6 +2,9 @@ package com.example.tamagotchi;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
 
 import com.example.tamagotchi.controllers.Pnl1_Ctrl;
 import com.example.tamagotchi.views.Pnl1_View;
@@ -32,6 +35,7 @@ public class PanelManager {
 
     public Activity refAct;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     private PanelManager(Context context){
         pnl= -1;
 
@@ -68,6 +72,7 @@ public class PanelManager {
         refAct = (Activity)context;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public static PanelManager getInstance(Context context){
         if(instance == null){
             instance = new PanelManager(context);

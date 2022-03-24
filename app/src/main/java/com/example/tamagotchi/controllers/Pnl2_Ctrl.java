@@ -31,5 +31,9 @@ public class Pnl2_Ctrl implements View.OnClickListener {
             // sleep
             refPanelManager.getTamagotchi().sleep();
         }
+        else if(v.getId() == R.id.buttonPlayAgain){
+            // play again
+            refPanelManager.getTamagotchi().playAgain();
+        }
     }
 }
